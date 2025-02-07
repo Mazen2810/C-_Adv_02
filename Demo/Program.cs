@@ -24,6 +24,34 @@ namespace Demo
             foreach (int i in ReversedNumbers)
                 Console.WriteLine(i);
         }
+        static bool IsBalanced(string str)
+        {
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char ch in str)
+            {
+                if (ch == '(' || ch == '{' || ch == '[')
+                {
+                    stack.Push(ch); 
+                }
+                else if (ch == ')' || ch == '}' || ch == ']')
+                {
+                    if (stack.Count == 0)
+                        return false;
+
+                    char top = stack.Pop();
+
+                    if ((ch == ')' && top != '(') ||
+                        (ch == '}' && top != '{') ||
+                        (ch == ']' && top != '['))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return stack.Count == 0;
+        }
         static void Main(string[] args)
         {
             #region Q2: Given a number N and an array of N numbers. Determine if it's palindrome or not.
@@ -49,15 +77,25 @@ namespace Demo
             #endregion
 
             #region Q3: Given a Queue, implement a function to reverse the elements of a queue using a stack.
-           // Queue<int> Numbers = new Queue<int>();
-           // Numbers.Enqueue(1);
-           // Numbers.Enqueue(2);
-           // Numbers.Enqueue(3);
-           // Numbers.Enqueue(4);
-           //
-           // Stack<int> ReversedNumbers = new Stack<int>();
-           // 
-           //Reverse(Numbers, ReversedNumbers);
+            // Queue<int> Numbers = new Queue<int>();
+            // Numbers.Enqueue(1);
+            // Numbers.Enqueue(2);
+            // Numbers.Enqueue(3);
+            // Numbers.Enqueue(4);
+            //
+            // Stack<int> ReversedNumbers = new Stack<int>();
+            // 
+            //Reverse(Numbers, ReversedNumbers);
+            #endregion
+
+
+            #region Q4: Given a Stack, implement a function to check if a string of parentheses is balanced using a stack
+            //string testString = "({[]})"; 
+            //
+            //if (IsBalanced(testString))
+            //    Console.WriteLine("Balanced");
+            //else
+            //    Console.WriteLine("Not Balanced");
             #endregion
 
         }
