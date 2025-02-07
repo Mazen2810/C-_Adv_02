@@ -15,29 +15,51 @@ namespace Demo
 
             return number;
         }
+        public static void Reverse(Queue<int> Numbers , Stack<int> ReversedNumbers)
+        {
+            foreach (int i in Numbers)
+            {
+                ReversedNumbers.Push(i);
+            }
+            foreach (int i in ReversedNumbers)
+                Console.WriteLine(i);
+        }
         static void Main(string[] args)
         {
             #region Q2: Given a number N and an array of N numbers. Determine if it's palindrome or not.
 
-           /// ArrayList Numbers = new ArrayList();
-           /// Numbers.Capacity = InsertFromUser("Enter Size of array");
-           /// for(int i = 0; i < Numbers.Capacity; i++)
-           /// {
-           ///     Numbers.Add(InsertFromUser($"Enter Index {i}"));
-           /// }
-           /// int count = 0;
-           ///for(int i = 0;i < Numbers.Count / 2; i++)
-           /// {
-           ///     if (Numbers[i].Equals(Numbers[Numbers.Count - 1 - i]))
-           ///         count++;
-           ///    
-           ///    
-           /// }
-           ///if(count == Numbers.Count / 2)
-           ///     Console.WriteLine("YES");
-           ///else
-           ///     Console.WriteLine("NO");
+            /// ArrayList Numbers = new ArrayList();
+            /// Numbers.Capacity = InsertFromUser("Enter Size of array");
+            /// for(int i = 0; i < Numbers.Capacity; i++)
+            /// {
+            ///     Numbers.Add(InsertFromUser($"Enter Index {i}"));
+            /// }
+            /// int count = 0;
+            ///for(int i = 0;i < Numbers.Count / 2; i++)
+            /// {
+            ///     if (Numbers[i].Equals(Numbers[Numbers.Count - 1 - i]))
+            ///         count++;
+            ///    
+            ///    
+            /// }
+            ///if(count == Numbers.Count / 2)
+            ///     Console.WriteLine("YES");
+            ///else
+            ///     Console.WriteLine("NO");
             #endregion
+
+            #region Q3: Given a Queue, implement a function to reverse the elements of a queue using a stack.
+           // Queue<int> Numbers = new Queue<int>();
+           // Numbers.Enqueue(1);
+           // Numbers.Enqueue(2);
+           // Numbers.Enqueue(3);
+           // Numbers.Enqueue(4);
+           //
+           // Stack<int> ReversedNumbers = new Stack<int>();
+           // 
+           //Reverse(Numbers, ReversedNumbers);
+            #endregion
+
         }
     }
 }
